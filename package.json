@@ -40,6 +40,7 @@
   "dependencies": {
     "babelify": "^7.3.0",
     "browserify": "^13.1.1",
+    "lodash": "^4.17.2",
     "stylus": "^0.54.5",
     "uglify-js": "^2.4.24"
   }
