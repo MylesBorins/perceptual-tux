@@ -35,11 +35,34 @@ function _destroy() {
   selected = null;
 }
 
-// Bind the functions...
+document.onmousemove = _move_elem;
+document.onmouseup = _destroy;
+
+
+// Maybe Mouse?
+
 document.getElementById('draggable-element').onmousedown = function () {
   _drag_init(this);
   return false;
 };
 
-document.onmousemove = _move_elem;
-document.onmouseup = _destroy;
+// document.getElementById('draggable-element').addEventListener('touchstart', function(event) {
+//   debugger;
+//   console.log(event.srcElement.parent);
+// });
+
+document.getElementById('draggable-element').addEventListener('touchmove', function(event) {
+  var selected = event.target.parentNode;
+  x_pos = event.touches[0].clientX;
+  y_pos = event.touches[0].clientY - 100;
+  x = (x_pos - x_elem);
+  y = (y_pos - y_elem);
+  selected.style.left = x + 'px';
+  selected.style.top = y + 'px';
+  positionPanner(x, y, 295);
+});
+
+// document.getElementById('draggable-element').addEventListener('touchend', function(event) {
+//   // console.log(event)
+// });
+

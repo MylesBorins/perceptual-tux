@@ -19,9 +19,9 @@ listener.setOrientation(0,0,-1,0,1,0);
 var WIDTH = window.innerWidth;
 var HEIGHT = window.innerHeight;
 
-var xPos = WIDTH/2;
-var yPos = HEIGHT/2;
-var zPos = 295;
+var xPos = Math.floor(WIDTH / 2);
+var yPos = Math.floor(HEIGHT / 2);
+var zPos = 300;
 
 // listener will always be in the same place for this demo
 listener.setPosition(xPos,yPos,300);
