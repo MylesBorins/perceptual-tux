@@ -60,7 +60,7 @@ function init() {
   var context = new (window.AudioContext || window.webkitAudioContext)();
   setupPanner(context);
   var gain = context.createGain();
-  gainNode.gain.value = 0.6;
+  gain.gain.value = 0.6;
   var listener = context.listener;
   listener.setOrientation(0,0,-1,0,1,0);
   // listener will always be in the same place for this demo
