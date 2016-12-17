@@ -12,7 +12,7 @@
     "test:watch": "nodemon --ignore node_modules/ -e js,json --exec 'npm test'",
     "tape": "browserify test/*.js | tap-closer | smokestack | tap-spec",
     "lint": "eslint src/ bin/ test/",
-    "build:js": "browserify src/index.js | uglifyjs -mc > dist/bundle.js",
+    "build:js": "browserify src/index.js | esmall > dist/bundle.js",
     "build:stylus": "stylus ./stylus/main.styl -o ./dist/main.css --compress",
     "build": "npm run clean && npm run build:js && npm run build:stylus && cp -r public/ dist",
     "watch:js": "watchify src/index.js -o dist/bundle.js -dv",
@@ -41,7 +41,6 @@
     "babelify": "^7.3.0",
     "browserify": "^13.1.1",
     "lodash": "^4.17.2",
-    "stylus": "^0.54.5",
-    "uglify-js": "^2.4.24"
+    "stylus": "^0.54.5"
   }
 }
