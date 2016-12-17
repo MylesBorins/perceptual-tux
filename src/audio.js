@@ -66,7 +66,8 @@ function init() {
   // listener will always be in the same place for this demo
   listener.setPosition(xPos,yPos,300);
   positionPanner(xPos, yPos, zPos);
-  panner.connect(gain.connect(context.destination));
+  panner.connect(gain);
+  gain.connect(context.destination)
   makeOscillators(context, panner);
   
   bootstrapGlobals();
