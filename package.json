@@ -19,7 +19,7 @@
     "watch:stylus": "stylus -w ./stylus/main.styl -o ./dist/main.css",
     "watch:public": "./bin/uatu.js",
     "watch": "npm run clean && (npm run watch:js & npm run watch:stylus & npm run watch:public)",
-    "clean": "rm -rf dist/*",
+    "clean": "rm -rf dist/ && mkdir -p dist/",
     "dev": "npm run watch & ecstatic dist/",
     "start": "npm run build && cat dist/bundle.js | gzip > dist/bundle.js.gz && ecstatic dist/ --gzip=true"
   },
@@ -30,6 +30,7 @@
     "chokidar": "^1.0.5",
     "ecstatic": "^2.1.0",
     "eslint": "^3.12.2",
+    "esmall": "^4.0.0",
     "mkdirp": "^0.5.1",
     "smokestack": "^3.3.0",
     "tap-closer": "^1.0.0",
